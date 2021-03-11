@@ -4,24 +4,21 @@
 public class Collatz {
 
     /** Buggy implementation of nextNumber! */
-    public static int nextNumber(int n) {
-        if (n  == 128) {
-            return 1;
-        } else if (n == 5) {
-            return 3 * n + 1;
-        } else {
-            return n * 2;
-        }
+    public static void nextNumber(int n) {
+       while (n != 1){
+           System.out.print (n + " ");
+           if (n % 2 == 0) {
+               n = n/2;
+           }
+           else {
+               n = 3 * n + 1;
+           }
+       }
+       System.out.print(1);
     }
 
     public static void main(String[] args) {
-        int n = 5;
-        System.out.print(n + " ");
-        while (n != 1) {
-            n = nextNumber(n);
-            System.out.print(n + " ");
-        }
-        System.out.println();
+        nextNumber(35);
     }
 }
 
